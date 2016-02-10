@@ -21,10 +21,12 @@ def prompt_password
 end
 
 def host_from_resource_kinds(resource_kinds)
+  host_aliases = ["host", "Host", "VCURL", "DfmServer", "ip_range", 
+    "ITM_REST_HOST", "host_name", "delivery_controller", "URL"]
   resource_kinds["resourceIdentifiers"]["resourceIdentifier"].each do |identifier|      
     # skip iterations where the schema is not what we expect
     next unless identifier.is_a?(Hash)
-    if ["host", "VCURL", "DfmServer"].include?(identifier["identifierType"]["name"])
+    if host_aliases.include?(identifier["identifierType"]["name"])
       return identifier["value"]
     end
   end
@@ -47,15 +49,18 @@ def main
   opts = Trollop::options do
     opt :host, "Host", :short => "-o", :required => true, :type => :string
     opt :user, "User", :required => true, :type => :string
+    opt :pass, "Password", :type => :string
   end
   hostname = opts[:host]
   username = opts[:user]
+  password = opts[:pass]
 
   # Do the REST API call to GET a hash of the adapter instances
-  adapters = get_adapters(hostname, username, "suite-api/api/adapters")
+  adapters = get_adapters(hostname, username, "suite-api/api/adapters", password)
 
-  # Uncomment the following line to view the raw output of the API call
-  # puts adapters
+  # Uncomment the following lines to view the full output of the API call
+  # require 'pp'
+  # PP.pp adapters
 
   # Create a hash of hash: {adapter_kind => {adapter_instance => host}} 
   adapter_kinds = get_instances(adapters)

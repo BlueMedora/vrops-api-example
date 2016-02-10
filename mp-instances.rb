@@ -3,7 +3,7 @@ require 'trollop'
 require 'highline/import'
 
 def get_adapters(hostname, username, urlend, password=nil)
-  password ||= promptpass 
+  password ||= prompt_password 
   base_uri = "https://#{hostname}/#{urlend}"
   auth = { "username": username, "password": password }
   begin
@@ -15,8 +15,8 @@ def get_adapters(hostname, username, urlend, password=nil)
   end
 end
 
-# Prompt the user without echo
-def promptpass
+# Prompt for the password without echo
+def prompt_password
   ask("Password? ") { |q| q.echo = false }
 end
 

@@ -50,3 +50,4 @@ vCenter Operations Adapter instances:
   vRealize Operations Manager Adapter : N/A
 ```
 
+See [bluemedora.com](http://bluemedora.com/) for blogs and vRealize Operations management packs.

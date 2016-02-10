@@ -4,6 +4,8 @@
 
 This script is an example of how to use the vRealize Operations (vROps) Manager REST API. In this case, the API is accessed directly via HTTP using [Ruby](https://www.ruby-lang.org/). Because this is a standard REST API (thoroughly documented at `https://{your-vrealize-host}/suite-api/`), this example can be translated into the language of your preference, from simple [cURL](https://curl.haxx.se/) calls to C, to Haskell. The are no Ruby dependencies in the API.
 
+When run, this script produces a list of all the adapter kinds and instances on a vRealize Operations system.
+
 ### Running the Script
 
 To run the script, you will need a system with Ruby (OS X and Linux have it by default) and [Bundler](http://bundler.io/) installed. You will also need a vROps instance to point the script, and vROps use with API access enabled.

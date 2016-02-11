@@ -2,9 +2,9 @@ require 'httparty'
 require 'trollop'
 require 'highline/import'
 
-def get_adapters(hostname, username, urlend, password=nil)
+def rest_get(hostname, username, urlend, password=nil)
   password ||= prompt_password 
-  base_uri = "https://#{hostname}/#{urlend}"
+  base_uri = "https://#{hostname}/suite-api#{urlend}"
   auth = { "username": username, "password": password }
   begin
     request = HTTParty.get(base_uri, basic_auth: auth, verify: false)
@@ -56,7 +56,7 @@ def main
   password = opts[:pass]
 
   # Do the REST API call to GET a hash of the adapter instances
-  adapters = get_adapters(hostname, username, "suite-api/api/adapters", password)
+  adapters = rest_get(hostname, username, "/api/adapters", password)
 
   # Uncomment the following lines to view the full output of the API call
   # require 'pp'

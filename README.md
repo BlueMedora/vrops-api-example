@@ -2,7 +2,7 @@
 
 ### What is This?
 
-This script is an example of how to use the vRealize Operations (vROps) Manager REST API. In this case, the API is accessed directly via HTTP using [Ruby](https://www.ruby-lang.org/). Because this is a standard REST API (thoroughly documented at `https://{your-vrealize-host}/suite-api/`), this example can be translated into the language of your preference, from simple [cURL](https://curl.haxx.se/) calls to C, to Haskell. The are no Ruby dependencies in the API.
+This script is an example of how to use the vRealize Operations (vROps) Manager REST API, [as featured in this VMware Cloud Management blog post](http://blogs.vmware.com/management/2016/02/straight-up-flying-with-the-vrealize-operations-rest-api.html). In this case, the API is accessed directly via HTTP using [Ruby](https://www.ruby-lang.org/). Because this is a standard REST API (thoroughly documented at `https://{your-vrealize-host}/suite-api/`), this example can be translated into the language of your preference, from simple [cURL](https://curl.haxx.se/) calls to C, to Haskell. The are no Ruby dependencies in the API.
 
 When run, this script produces a list of all the adapter kinds and instances on a vRealize Operations system.
 

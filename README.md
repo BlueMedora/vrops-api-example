@@ -4,7 +4,7 @@
 
 These scripts are examples of using the vRealize Operations (vROps) Manager REST API, [as featured on the VMware Cloud Management blog](http://blogs.vmware.com/management/2016/02/straight-up-flying-with-the-vrealize-operations-rest-api.html). In this case, the API is accessed directly via HTTP using [Ruby](https://www.ruby-lang.org/). Because this is a standard REST API (thoroughly documented at `https://{your-vrealize-host}/suite-api/`), this example can be translated into the language of your preference, from simple [cURL](https://curl.haxx.se/) calls to C, to Haskell. The are no Ruby dependencies in the API.
 
-The basic example produces a list of all the adapter kinds and instances on a vRealize Operations system. The advanced example creates, starts and deletes SQL Server adapter instances.
+The basic example produces a list of all the adapter kinds and instances on a vRealize Operations system. The [advanced example](http://blogs.vmware.com/management/2016/03/blast-off-advanced-usage-of-the-vrealize-operations-rest-api.html) creates, starts and deletes SQL Server adapter instances.
 
 ### Prerequisites
 

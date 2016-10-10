@@ -42,7 +42,7 @@ DellComputeAdapter instances:
 EP Ops Adapter instances:
   EP Ops adapter - a5e7ce6d-94b5-46c5-b01d-bcad7dfb8713 : N/A
 MySQLAdapter instances:
-  mysql56-rh7 : mysql56-rh7.bluemedora.localnet
+  mysql56-rh7 : mysql56-rh7
 [...]
 ```
 

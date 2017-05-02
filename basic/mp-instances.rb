@@ -38,8 +38,12 @@ def get_instances(adapters)
   adapters["adapter_instances"]["adapter_instance"].each do |instance|
     resource_kinds = instance["resourceKey"]
     name = resource_kinds["name"]
-    adapter_kinds[resource_kinds["adapterKindKey"]] ||= {}
-    adapter_kinds[resource_kinds["adapterKindKey"]][name] = host_from_resource_kinds resource_kinds
+    begin
+      adapter_kinds[resource_kinds["adapterKindKey"]] ||= {}
+      adapter_kinds[resource_kinds["adapterKindKey"]][name] = host_from_resource_kinds resource_kinds
+    rescue
+      puts "Error handling: '#{resource_kinds}'"
+    end
   end
   adapter_kinds
 end
